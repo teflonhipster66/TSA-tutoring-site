@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Teacher.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+<form>
+<h1>Sign Up to be a teacher</h1>
+<p>Please Fill up this form to be a teacher</p>
+<hr>
+
+
+
+<form>
+    <select id="roles">
+    <option value="teacher">Teacher</option>
+    <option value="student">Student</option>
+    </select>
+</form>
+
+
+
+<div>
+<p>
+    How old are you?
+</p>
+
+</div>
+<div id="Form" class="Form " >
+    <input type="number" placeholder="Age Above 15" name="age" required pattern="[0-9\.]+" id= "Age" min= "15" max = "122" required>
+    
+
+</div>
+<div>
+<p>
+    Do you have any past experience teaching or anything related to that?
+</p>
+</div>
+<div>
+  <input type="radio" id="HighSchoolMath" name="Requirements" value="Finished Algebra 1 and Geometry A in highschool" required> 
+  <label for="html">Finished Algebra 1 and Geometry A in highschool</label><br>
+  <input type="radio" id="HighSchoolDiploma" name="Requirements" value="Finished All Classes required to pass highschool and get diploma">
+  <label for="html">Finished All Classes required to pass highschool and get diploma</label><br>
+  <input type="radio" id="MD/Undergraduate Degree" name="Requirements" value="Finished MD or Undergraduate Degree">
+  <label for="html">Finished MD or Undergraduate Degree</label><br>
+  
+</div>
+<div>
+<p>
+    Enter Email
+</p>
+</div>
+<div id="form" class=" Form">
+    
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email " pattern="a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+    <small></small>
+    
+</div>
+<div>
+    <p>
+       Create a username:
+    </p>
+</div>
+<div>
+    <divi id="form" class=" Form">
+    
+    <label for="User"><b>Username</b></label>
+    <input type="Username" placeholder="Enter Username" name="User"  id= "Username" pattern="^(?=.*\d).{4,8}$" required >
+    </div>
+    <small></small>
+    
+</div>
+<div>
+    <p>
+        Create a password
+    </p>
+</div>
+<div>
+    <div id="form">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" pattern= "^(?=.*\d).{4,8}$" id="psw" required>
+    <small></small>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="pswrepeat" required >
+    <small></small>
+
+    <label id="form">
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    
+    <button type="submit" value="Submit" onclick="submit()" >Submit</button>
+   
+
+</div>
+   
+   
+   
+<script src="Teacher.js"></script>
+    
+   
+</div>
+</form>
+
+</body>
+</html>
