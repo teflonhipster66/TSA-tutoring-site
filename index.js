@@ -1,10 +1,5 @@
-
-
-
 function submit(){
     var Data = []
-    for (var i = 0; i < Data.length; i++)
-        Data[i] = []
     var type = document.getElementById("roles").value;
     var password= document.getElementById("psw").value;
     var password2= document.getElementById("pswrepeat").value;
@@ -21,10 +16,10 @@ function submit(){
         localStorage.setItem("teacherUser", username)
         localStorage.setItem("teacherPassword", password)
         localStorage.setItem("TypeCounter",  1)
-        Data[0] = localStorage.getItem("TypeCounter")
-        Data[1] = localStorage.getItem("StoredEmail")
-        Data[2] = localStorage.getItem("teacherUser")
-        Data[3] = localStorage.getItem("teacherPassword")
+        Data.push (localStorage.getItem("TypeCounter"));
+        Data.push (localStorage.getItem("StoredEmail"));
+        Data.push (localStorage.getItem("teacherUser"));
+        Data.push (localStorage.getItem("teacherPassword"));
     
         localStorage.setItem("Array", JSON.stringify(Data))
         
@@ -35,17 +30,17 @@ function submit(){
         localStorage.setItem("studentPassword", password)
         type = type + 2
         localStorage.setItem("TypeCounter", 2)
-        Data[0] = localStorage.getItem("TypeCounter")
-        Data[1] = localStorage.getItem("StoredEmail")
-        Data[2] = localStorage.getItem("StudentUser")
-        Data[3] = localStorage.getItem("studentPassword")
+        Data.push(localStorage.getItem("TypeCounter"));
+        Data.push(localStorage.getItem("StoredEmail"));
+        Data.push(localStorage.getItem("StudentUser"));
+        Data.push(localStorage.getItem("studentPassword"));
         localStorage.setItem("Array", JSON.stringify(Data))
 
     }
 
     if (password == password2){
            window.open("login.html")
-        
+
     }
 }
 
