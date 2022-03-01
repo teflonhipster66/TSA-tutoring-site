@@ -50,8 +50,6 @@ function Incorrect() {
 
 function verify() {
     console.time()
-
-
     var Data = JSON.parse(localStorage.getItem("Array"))
     console.log(Data)
     var userInput = document.getElementById("enterUser").value
@@ -90,38 +88,35 @@ function verify() {
 
 
 function email() {
-    var type = localStorage.getItem("TypeCounter")
-    var GetEmail = localStorage.getItem("StoredEmail")
-    if (type == 1) { 
+    console.time()
+    input = prompt("Enter Recovery Email")
+    var x = 0 
+    var Data = JSON.parse(localStorage.getItem("Array"))
+    if (Data.includes(input)) {
+        var infoLocation = Data.indexOf(input)
+        var userRecovery = infoLocation + 1
+        var pwRecovery = infoLocation + 2
+        x = x + 1
+    }
+    else { 
+        alert("Incorrect username or Password")
+    }
+
+
+    if (x == 1) { 
         Email.send({
             Host: "smtp.gmail.com",
             Username: "TutoringAppTSA@gmail.com",
             Password: "tutoringpassword",
-            To: GetEmail,
+            To: input,
             From: "TutoringAppTSA@gmail.com",
             Subject: "Username and password Recovery",
-            Body: "Username: " + localStorage.getItem("teacherUser") + "Password: " + localStorage.getItem("teacherPassword"),
+            Body: "Username: " + Data[userRecovery] + "Password: " + Data[pwRecovery],
     })
             .then(function (message) {
             alert("mail sent successfully")
         });
     
     }
-
-    if (type == 2) {
-        Email.send ({
-            Host: "smtp.gmail.com",
-            Username: "TutoringAppTSA@gmail.com",
-            Password: "tutoringpassword",
-            To: GetEmail,
-            From: "TutoringAppTSA@gmail.com",
-            Subject: "Username and password Recovery",
-            Body: "Username: " + localStorage.getItem("StudentUser") + "Password: " + localStorage.getItem("studentPassword") ,
-        })
-            .then(function (message) {
-                alert("mail sent successfully")
-            
-        })
-    }
-
+    console.timeEnd()
 }
