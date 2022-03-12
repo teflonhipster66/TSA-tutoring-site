@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src ="https://smtpjs.com/v3/smtp.js"></script>
+    <script src ="index.js"></script>
     
     <style>
         
@@ -77,11 +77,12 @@ h1 {
             <input type="text" name="" id="enterUser" placeholder="Enter Username">
             <p>Password</p> 
             <input type="password" id="enterPw" name="" placeholder="Enter Password"> <br>
-            <button  type="button"onclick="verify()" id="enterButton">Login</button><br>
+            <button onclick="verify(); GetUserwithEverythird();"  id="enterButton">Login</button><br>
             <button type="button" onclick="email()"> Send Recovery Email</button><br>
             <a href="SignUp.html">Dont have an account?"</a> 
         </form>
     </div>
+    <script src ="https://smtpjs.com/v3/smtp.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
